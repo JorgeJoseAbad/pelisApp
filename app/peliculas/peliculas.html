@@ -1,0 +1,47 @@
+<div class="container" ng-controller="PeliculasCtrl">
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <p>Que pelicula quieres ver??</p>
+      <form class="navbar-form navbar-left" novalidate>
+        <div class="form-group">
+          <label for="titulo">Titulo de la pelicula</label>
+          <input ng-model="titulo" name="titulo" value="titulo" required>
+        </div>
+        <div class="form-group">
+          <label for="titulo">¿De algun año determinado?</label>
+          <input ng-model="year" name="year" value="year" required>
+        </div>
+        <div class="form-group">
+          <label for="buscar"></label>
+          <input type="submit" name="buscar" ng-click="buscaPeliculas()" value="buscar">
+        </div>
+      </form>
+      <div>
+        <p>Pelicula buscada: {{titulo}}</p>
+        <p>Del año: {{year}}</p>
+      </div>
+
+      <div ng-if="error" ng-init="error = false">
+        <p>Se ha producido un error</p>
+        {{resultadoError}}
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <ol>
+        <li ng-if="!error" ng-repeat="pelicula in listaPeliculas">
+          <div>{{pelicula.Title}}</div>
+          <a href="../app/#/pelicula" class="thumb" ng-click="goToPelicula(pelicula)">
+            <img ng-src="{{pelicula.Poster}}" alt="{{pelicula.Title}}" style="width:30px; heigth:auto" />
+          </a>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+</div>
