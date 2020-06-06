@@ -7,7 +7,7 @@ ha sido generada a partir de un commit de angular-seed que empleaba AngularJS 1.
 La versión de AngularJS empleada es la 1.4.14. angular.version:
 ```
 {full: "1.4.14", major: 1, minor: 4, dot: 14, codeName: "material-distinction"}
-``,
+```
 
 Se ha elegido mantener una estructura próxima a la de componentes empleada en Angular, módulo y controlador y plantilla en la misma carpeta. En vez de separar vistas (templates), controladores, etc.
 
