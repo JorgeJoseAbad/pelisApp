@@ -4,8 +4,6 @@
 var myApp = angular.module('myApp', [
   'ngRoute',
   'ngStorage',
-  //'ngResource', // para lo del mock
-  //'ngMockE2E',  // para lo del mock
   'myApp.core',
   'myApp.peliculas',
   'myApp.pelicula',

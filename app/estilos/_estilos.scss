@@ -1,0 +1,22 @@
+//Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (57)
+//For more information on which environments are supported please see:
+//https://github.com/sass/node-sass/releases/tag/v4.3.0
+
+/* define variables for the primary colors */
+$primary_1: #a2b9bc;
+$primary_2: #b2ad7f;
+$primary_3: #878f99;
+$primary_4: #a2d2e9;
+
+/* use the variables */
+.main-header {
+  background-color: $primary_1;
+}
+
+.menu-left {
+  background-color: $primary_2;
+}
+
+.menu-right {
+  background-color: $primary_3;
+}

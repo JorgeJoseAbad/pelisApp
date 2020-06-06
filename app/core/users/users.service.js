@@ -1,9 +1,9 @@
 
 users
-  .factory('UsersService', function() {
+  .factory('UsersService', () => {
         var usersService = {};
 
-        usersService.get = function() {
+        usersService.get = () => {
           let usuariosAutorizados = [
             {username:"usuario1",password:"password1"},
             {username:"usuario2",password:"password2"},
