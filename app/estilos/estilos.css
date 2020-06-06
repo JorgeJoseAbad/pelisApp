@@ -60,6 +60,11 @@
   font-weight: bold;
 }
 
+.error {
+  background-color: #eba9a9;
+  padding: 5px;
+}
+
 /* Para pruebas gulp */
 .clase-test {
   background-color: red;

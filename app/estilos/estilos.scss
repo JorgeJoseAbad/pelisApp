@@ -7,6 +7,7 @@ $primary_1: #a2b9bc;
 $primary_2: #b2ad7f;
 $primary_3: #878f99;
 $primary_4: #a2d6e9;
+$error_1: #eba9a9;
 
 /* use the variables */
 .main-header {
@@ -69,6 +70,11 @@ $primary_4: #a2d6e9;
   font-size: 22px;
   font-weight: bold;
 
+}
+
+.error{
+  background-color: $error_1;
+  padding: 5px;
 }
 
 /* Para pruebas gulp */

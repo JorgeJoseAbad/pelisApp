@@ -11,7 +11,7 @@ La versión de AngularJS empleada es la 1.4.14. angular.version:
 
 Se ha elegido mantener una estructura próxima a la de componentes empleada en Angular, módulo y controlador y plantilla en la misma carpeta. En vez de separar vistas (templates), controladores, etc.
 
-###Incluye las funcionalidades básicas:
+### Incluye las funcionalidades básicas:
 
 --> Obtención de datos de un API REST en http://www.omdbapi.com/ (key a utilizar: f12ba140).
 --> Visualización de películas, las peticiones hay que hacerlas con promesas.
@@ -57,7 +57,7 @@ Entrar por:
 http://localhost:8000/app/
 ```
 
-##
+## Funcionalidades
 
 Una vez levantado y dirigidos a http://localhost:8000/app/
 
