@@ -1,0 +1,79 @@
+//Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (57)
+//For more information on which environments are supported please see:
+//https://github.com/sass/node-sass/releases/tag/v4.3.0
+
+/* define variables for the primary colors */
+$primary_1: #a2b9bc;
+$primary_2: #b2ad7f;
+$primary_3: #878f99;
+$primary_4: #a2d6e9;
+
+/* use the variables */
+.main-header {
+  background-color: $primary_1;
+}
+
+.main-body {
+  background-color: $primary_4;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.menu-left {
+  background-color: $primary_2;
+}
+
+.menu-right {
+  background-color: $primary_3;
+}
+
+.footer {
+  background-color: $primary_3;
+}
+
+/* Estilos originales del menu */
+.menu {
+  font-size: 22px;
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+/* Nuevos elementos */
+
+.pelicula-titulo{
+  font-family: fantasy;
+  font-size: 22px;
+  font-weight: bold;
+
+}
+
+/* Para pruebas gulp */
+.clase-test{
+  background-color: red;
+  font-size: 20px;
+  font-style: italic;
+}

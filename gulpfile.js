@@ -10,14 +10,29 @@ var sass = require('gulp-sass');
 
 sass.compiler = require('node-sass');
 
+var paths = {
+    version:'.app/components/version/',
+    users:'.app/core/users/',
+    core:'.app/core/',
+    favoritas:'.app/favoritas/',
+    pelicula: '.app/pelicula/',
+    peliculas: '.app/peliculas/',
+    estilos: ['./app/**/*.css', './app/**/*.scss'],
+    distDev: './dist',
+  }
+
+//compile
 gulp.task('sass', function () {
-  return gulp.src('app/estilos/_estilos.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('app/estilos/_estilos.css'));
+  return gulp.src(paths.estilos)
+  .pipe(sass().on('error', sass.logError))
+  .pipe(gulp.dest(paths.distDev));
 });
 
-gulp.task('sass:watch', function () {
-  gulp.watch('estilos/**/*.scss', ['sass']);
+//compile and watch
+gulp.task('sass:watch', function() {
+  gulp.watch(paths.styles, ['sass']);
 });
+
+
 
 //exports.default = defaultTask
