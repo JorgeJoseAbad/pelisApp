@@ -13,7 +13,7 @@ sass.compiler = require('node-sass');
 gulp.task('sass', function () {
   return gulp.src('app/estilos/_estilos.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('app/estilos/estilos.css'));
+    .pipe(gulp.dest('app/estilos/_estilos.css'));
 });
 
 gulp.task('sass:watch', function () {

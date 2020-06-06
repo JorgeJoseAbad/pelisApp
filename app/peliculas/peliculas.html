@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-md-12">
 
-      <p>Que pelicula quieres ver??</p>
+      <h1>Qué pelicula quieres ver??</h1>
       <form class="navbar-form navbar-left" novalidate>
         <div class="form-group">
           <label for="titulo">Titulo de la pelicula</label>
@@ -35,10 +35,10 @@
     <div class="col-md-12">
       <ol>
         <li ng-if="!error" ng-repeat="pelicula in listaPeliculas">
-          <div>{{pelicula.Title}}</div>
-          <a href="../app/#/pelicula" class="thumb" ng-click="goToPelicula(pelicula)">
-            <img ng-src="{{pelicula.Poster}}" alt="{{pelicula.Title}}" style="width:30px; heigth:auto" />
-          </a>
+            <p class="pelicula-titulo">{{pelicula.Title}}.. pulsa para ver</p>
+            <a  href="../app/#/pelicula" ng-click="goToPelicula(pelicula)">
+              <img class="thumbnail" ng-src="{{pelicula.Poster}}" alt="{{pelicula.Title}}" />
+            </a>
         </li>
       </ol>
     </div>

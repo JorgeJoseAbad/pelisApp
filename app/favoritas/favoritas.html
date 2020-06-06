@@ -1,10 +1,10 @@
-<p>He llegado a favoritas</p>
+<h1><div>Estas son mis peliculas favoritas</div></h1>
 
 <ol>
   <li ng-if="!error" ng-repeat="favorita in favoritas">
-    <div>{{favorita.Title}}</div>
-    <a href="../app/#/pelicula" class="thumb" ng-click="goToPelicula(favorita)">
-      <img ng-src="{{favorita.Poster}}" alt="{{favorita.Title}}" style="width:30px; heigth:auto" />
+    <div class="pelicula-titulo">{{favorita.Title}}  .. pulsa para ver</div>
+    <a href="../app/#/pelicula" ng-click="goToPelicula(favorita)">
+      <img class="thumbnail" ng-src="{{favorita.Poster}}" alt="{{favorita.Title}}" />
     </a>
   </li>
 </ol>
