@@ -72,7 +72,7 @@ http://localhost:8000/
 
 ## Funcionalidades
 
-Una vez levantado y dirigidos a http://localhost:8000/app/
+Una vez levantado y dirigidos a http://localhost:8000/
 
 La aplicación lleva a la página de login, donde nombre usuario y contraseña son comparados con los que están en el Mock, y que son visibles en el Session Storage.
 
@@ -87,5 +87,7 @@ Pulsando sobre una de ellas la llevamos a la página de pelicula; donde vemos co
 Podemos visualizar las películas favoritas accediendo desde el menú principal a la página de favoritas. Desde ésta se puede también ir a la  página de película individual pulsando sobre una de ellas.
 
 ## Ramas del repositorio
-master: estado actual
-dev: continua el desarrollo
+### master:
+Estado actual
+### dev:
+Continua el desarrollo
