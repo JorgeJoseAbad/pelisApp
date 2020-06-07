@@ -36,7 +36,7 @@
       <ol>
         <li ng-if="!error" ng-repeat="pelicula in listaPeliculas">
             <p class="pelicula-titulo">{{pelicula.Title}}.. pulsa para ver</p>
-            <a  href="../app/#/pelicula" ng-click="goToPelicula(pelicula)">
+            <a  href="/#/pelicula" ng-click="goToPelicula(pelicula)">
               <img class="thumbnail" ng-src="{{pelicula.Poster}}" alt="{{pelicula.Title}}" />
             </a>
         </li>

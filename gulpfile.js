@@ -34,7 +34,7 @@ const paths = {
   }
 
 function html() {
-      return src(paths.pelicula)
+      return src('./app/**/*.jade')
           .pipe(jade())
           .pipe(dest(paths.distDev));
 }
