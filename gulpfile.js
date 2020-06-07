@@ -8,6 +8,9 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const jade = require('gulp-jade');
+const source = require('vinyl-source-stream');
+const browserify = require('browserify');
+const babelify = require('babelify');
 sass.compiler = require('node-sass');
 const webserver = require('gulp-webserver');
 
@@ -29,6 +32,15 @@ const paths = {
     favoritas:'.app/favoritas/',
     pelicula: ['.app/pelicula/*.jade'],
     peliculas: ['.app/peliculas/'],
+    controllers: [
+      './app/components/version/version.js',
+      './app/core/core.module.js',
+      './app/core/users/users.module.js',
+      './app/favoritas/favoritas.js',
+      './app/login/login.js',
+      './app/pelicula/pelicula.js',
+      './app/peliculas/peliculas.js'
+    ],
     estilos: ['./app/**/*.css', './app/**/*.scss'],
     distDev: './dist/',
   }
@@ -50,6 +62,20 @@ function bowerComponents() {
         .pipe(dest('./dist/bower_components/'));
 }
 
+
+function buildES2015() {
+    return browserify({
+            entries: [paths.controllers]
+        })
+        .transform(babelify.configure({
+            presets: ["es2015"]
+        }))
+        .bundle()
+        .pipe(source("app.js"))
+        .pipe(dest("./dist"));
+}
+
+
 function startServer() {
   return src('app')
     .pipe(webserver({
@@ -62,29 +88,8 @@ function startServer() {
     }));
 }
 
-// app/index.html
-//compile
-gulp.task('sass', function () {
-  return gulp.src(paths.estilos)
-  .pipe(sass().on('error', sass.logError))
-  .pipe(gulp.dest(paths.distDev));
-});
-
-//compile and watch
-gulp.task('sass:watch', function() {
-  gulp.watch(paths.styles, ['sass']);
-});
 
 
-gulp.task('templates', function() {
-  var YOUR_LOCALS = {};
-
-  return gulp.src(paths.pelicula)
-    .pipe(jade())
-    .pipe(gulp.dest(paths.distDev))
-
-});
-
-exports.build = series(html,css,bowerComponents,startServer);
-exports.default = series(html,css,bowerComponents,startServer);
+exports.build = series(buildES2015,html,css,bowerComponents,startServer);
+exports.default = series(buildES2015,html,css,bowerComponents,startServer);
 //exports.default = defaultTask
