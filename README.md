@@ -14,20 +14,33 @@ Se ha elegido mantener una estructura próxima a la de componentes empleada en A
 ### Incluye las funcionalidades básicas:
 
 --> Obtención de datos de un API REST en http://www.omdbapi.com/ (key a utilizar: f12ba140).
---> Visualización de películas, las peticiones hay que hacerlas con promesas.
+--> Visualización de películas, las peticiones realizadas con promesas.
 --> Visualización de detalle de cada película (reutilización del modelo almacenado del punto anterior).
 --> Añadir películas favoritas en el localstorage.
+--> Visualización de favoritas.
 --> Mock de inicio de sesión usuarios y almacenaje en sesión storage (Interceptor para simular backend).
---> La versión a utilizar de AngularJs es 1.4.14
+--> La versión AngularJs 1.4.14
 --> SaSS
 --> Bootstrap 3
 --> Versión de JavaScript es6
---> Gestor de dependencias Bower.
+--> Gestor de dependencias Bower
+--> Jade.
+--> Gulp: Construcción y arranque desde gulpfile.js
 
 ### Puntos aún pendientes de incluir o mejorar:
---> gulp con creación carpeta dist
---> Jade
---> Mejora gestión sesión usuarios.
+
+--> Servicio completo desde carpeta dist.
+--> Reworking y limpieza de código.
+
+Nota importante: en este momento el arranque esta configurado en gulpfile
+para entrar por app.
+```
+return src('app')
+```
+el objetivo es que se sirva desde desde dist
+```
+return src('app')
+```
 
 ## Instalación
 
@@ -54,7 +67,7 @@ para arrancar la aplicación
 Entrar por:
 
 ```
-http://localhost:8000/app/
+http://localhost:8000/
 ```
 
 ## Funcionalidades
@@ -72,3 +85,7 @@ Mostrándose el listado de películas encontrado o un mensaje de error.
 Pulsando sobre una de ellas la llevamos a la página de pelicula; donde vemos como detalle el año de producción. Y podemos añadirla al listado de películas favoritas que están almacenadas en localstorage.
 
 Podemos visualizar las películas favoritas accediendo desde el menú principal a la página de favoritas. Desde ésta se puede también ir a la  página de película individual pulsando sobre una de ellas.
+
+## Ramas del repositorio
+master: estado actual
+dev: continua el desarrollo
