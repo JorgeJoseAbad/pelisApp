@@ -1,0 +1,9 @@
+h1()
+  div() Estas son mis peliculas favoritas
+ol()
+  li(ng-if="!error" ng-repeat="favorita in favoritas")
+    div(class="pelicula-titulo") {{favorita.Title}}  .. pulsa para ver
+    a(href="/#/pelicula" ng-click="goToPelicula(favorita)")
+      img(class="thumbnail" ng-src="{{favorita.Poster}}" alt="{{favorita.Title}}" )
+  
+  

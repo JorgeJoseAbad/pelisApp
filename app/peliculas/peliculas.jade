@@ -1,0 +1,29 @@
+div(class="container" ng-controller="PeliculasCtrl")
+  div(class="row")
+    div(class="col-md-12")
+      h1() Qué pelicula quieres ver??
+      form(class="navbar-form navbar-left" novalidate)
+        div(class="form-group")
+          label(for="titulo") Titulo de la pelicula
+          input(ng-model="titulo" name="titulo" value="titulo" required)
+        div(class="form-group")
+          label(for="titulo") ¿De algun año determinado?
+          input(ng-model="year" name="year" value="year" required)
+        div(class="form-group")
+          label(for="buscar")
+          input(type="submit" name="buscar" ng-click="buscaPeliculas()" value="buscar")
+      div()
+        p() Pelicula buscada: {{titulo}}
+        p() Del año: {{year}}
+      div(class="error" ng-if="error" ng-init="error = false")
+        p() Se ha producido un error
+        p() {{resultadoError}}
+  
+  div(class="row")
+    div(class="col-md-12")
+      ol()
+        li(ng-if="!error" ng-repeat="pelicula in listaPeliculas")
+          p(class="pelicula-titulo") {{pelicula.Title}}.. pulsa para ver
+          a(href="/#/pelicula" ng-click="goToPelicula(pelicula)")
+            img(class="thumbnail" ng-src="{{pelicula.Poster}}" alt="{{pelicula.Title}}" )
+      
