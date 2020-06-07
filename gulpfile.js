@@ -36,10 +36,12 @@ const paths = {
       './app/components/version/version.js',
       './app/core/core.module.js',
       './app/core/users/users.module.js',
+      './app/core/users/users.service.js',
       './app/favoritas/favoritas.js',
       './app/login/login.js',
       './app/pelicula/pelicula.js',
-      './app/peliculas/peliculas.js'
+      './app/peliculas/peliculas.js',
+      './app/app.js'
     ],
     estilos: ['./app/**/*.css', './app/**/*.scss'],
     distDev: './dist/',

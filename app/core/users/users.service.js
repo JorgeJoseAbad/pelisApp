@@ -1,5 +1,5 @@
 
-users
+angular.module('core.users')
   .factory('UsersService', () => {
         var usersService = {};
 
