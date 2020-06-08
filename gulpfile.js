@@ -29,6 +29,8 @@ const paths = {
 
     controllers: [
       './app/components/version/version.js',
+      './app/components/version/version-directive.js',
+      './app/components/version/interpolate-filter.js',
       './app/core/core.module.js',
       './app/core/users/users.module.js',
       './app/core/users/users.service.js',
@@ -74,7 +76,7 @@ function buildES2015() {
 
 
 function startServer() {
-  return src('app')
+  return src('dist')
     .pipe(webserver({
       livereload: true,
       directoryListing: false,
