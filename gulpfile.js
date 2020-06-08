@@ -26,12 +26,7 @@ const {
 
 
 const paths = {
-    version:'.app/components/version/',
-    users:'.app/core/users/',
-    core:'.app/core/',
-    favoritas:'.app/favoritas/',
-    pelicula: ['.app/pelicula/*.jade'],
-    peliculas: ['.app/peliculas/'],
+
     controllers: [
       './app/components/version/version.js',
       './app/core/core.module.js',
