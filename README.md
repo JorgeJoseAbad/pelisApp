@@ -27,17 +27,18 @@ Se ha elegido mantener una estructura próxima a la de componentes empleada en A
 --> Jade.
 --> Gulp: Construcción y arranque desde gulpfile.js
 
+--> Servido desde carpeta distribución (dist)
+
 ### Puntos aún pendientes de incluir o mejorar:
 
---> Servicio completo desde carpeta dist.
 --> Reworking y limpieza de código.
 
 Nota importante: en este momento el arranque esta configurado en gulpfile
-para entrar por app.
+para entrar por dist.
 ```
-return src('app')
+return src('dist')
 ```
-el objetivo es que se sirva desde desde dist
+Si se desea entrar por desarrollo, cambiar a:
 ```
 return src('app')
 ```
