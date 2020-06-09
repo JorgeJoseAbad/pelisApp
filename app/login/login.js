@@ -23,14 +23,6 @@ angular.module('myApp.login', [
   //los usuarios autorizados desde el mock.
   console.log(UsersService.get());
 
-  /**
-  * datos mock para sesion storage se cargan al lanzar el controlador
-  */
-  //let usuariosAutorizados = [
-  //  {username:"usuario1",password:"password1"},
-  //  {username:"usuario2",password:"password2"},
-  //  {username:"Gengis",password:"Khan"}
-  //]
 
   $sessionStorage.valueToShare = UsersService.get();
 
