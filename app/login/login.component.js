@@ -1,10 +1,6 @@
 'use strict';
 
-angular.module('myApp.login', [
-  'ngRoute',
-  'ngStorage',
-  'core.users'
-])
+angular.module('myApp.login')
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/login', {
