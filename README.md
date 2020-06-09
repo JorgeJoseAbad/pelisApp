@@ -1,8 +1,8 @@
 # pelisApp
 
-## Version 1.0
+## Version 1.1
 
-ha sido generada a partir de un commit de angular-seed que empleaba AngularJS 1.4.
+ha sido generada a partir de un commit de angular-seed que empleaba AngularJS 1.4. Modificados los componentes para separar declaración de modulo de componente.
 
 La versión de AngularJS empleada es la 1.4.14. angular.version:
 ```
