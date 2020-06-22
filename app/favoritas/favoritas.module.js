@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('myApp.favoritas', ['ngRoute','ngStorage'])
+angular.module('myApp.favoritas', ['ngRoute','ngStorage','header'])

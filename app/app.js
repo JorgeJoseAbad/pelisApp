@@ -9,7 +9,6 @@ var myApp = angular.module('myApp', [
   'myApp.pelicula',
   'myApp.favoritas',
   'myApp.login',
-  'header',
   'myApp.version'
 ]).
 factory("GestorPeliculas", function() {
