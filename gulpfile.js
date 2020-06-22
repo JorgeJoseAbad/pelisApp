@@ -42,6 +42,8 @@ const paths = {
       './app/pelicula/pelicula.component.js',
       './app/peliculas/peliculas.module.js',
       './app/peliculas/peliculas.component.js',
+      './app/header/header.module.js',
+      './app/header/header.component.js',
       './app/app.js'
     ],
     estilos: ['./app/**/*.css', './app/**/*.scss'],
