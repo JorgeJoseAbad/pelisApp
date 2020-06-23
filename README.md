@@ -33,15 +33,12 @@ Se ha elegido mantener una estructura próxima a la de componentes empleada en A
 
 --> Reworking y limpieza de código.
 
-Nota importante: en este momento el arranque esta configurado en gulpfile
+Nota importante: El arranque esta configurado en gulpfile
 para entrar por dist.
 ```
 return src('dist')
 ```
-Si se desea entrar por desarrollo, cambiar a:
-```
-return src('app')
-```
+
 
 ## Instalación
 

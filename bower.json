@@ -1,7 +1,7 @@
 {
   "name": "pelis-app",
   "description": "AngularJS galeria peliculas con Gulp Jade",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "homepage": "https://github.com/JorgeJoseAbad/pelisApp",
   "license": "MIT",
   "private": true,
