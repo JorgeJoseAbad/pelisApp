@@ -34,6 +34,8 @@ const paths = {
       './app/core/core.module.js',
       './app/core/users/users.module.js',
       './app/core/users/users.service.js',
+      './app/core/pelicula/pelicula.module.js',
+      './app/core/pelicula/pelicula.service.js',
       './app/favoritas/favoritas.module.js',
       './app/favoritas/favoritas.component.js',
       './app/login/login.module.js',
