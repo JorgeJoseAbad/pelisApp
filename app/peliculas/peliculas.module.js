@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('myApp.peliculas', ['ngRoute','core.pelicula','header'])
+angular.module('myApp.peliculas', ['ngRoute','myApp.core','header'])

@@ -1,6 +1,6 @@
 # pelisApp
 
-## Version 1.1
+## Version 3.0
 
 ha sido generada a partir de un commit de angular-seed que empleaba AngularJS 1.4. Modificados los componentes para separar declaración de modulo de componente.
 
@@ -26,12 +26,8 @@ Se ha elegido mantener una estructura próxima a la de componentes empleada en A
 --> Gestor de dependencias Bower
 --> Jade.
 --> Gulp: Construcción y arranque desde gulpfile.js
-
 --> Servido desde carpeta distribución (dist)
 
-### Puntos aún pendientes de incluir o mejorar:
-
---> Reworking y limpieza de código.
 
 Nota importante: El arranque esta configurado en gulpfile
 para entrar por dist.
