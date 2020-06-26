@@ -1,9 +1,11 @@
-'use strict';
+(function() {
+  'use strict';
 
-angular.
-module('core.pelicula').
-factory('Buscador', ['$http',
-  function($http) {
+  angular.
+  module('core.pelicula').
+  factory('Buscador', ['$http', buscador]);
+
+  function buscador($http) {
     return function(titulo, year) {
       var listaPeliculas = [];
       console.log("en factory Buscador dato es", titulo, year);
@@ -11,4 +13,5 @@ factory('Buscador', ['$http',
     }
 
   }
-]);
+
+})();

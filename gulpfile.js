@@ -33,9 +33,9 @@ const paths = {
       './app/components/version/interpolate-filter.js',
       './app/core/core.module.js',
       './app/core/users/users.module.js',
-      './app/core/users/users.service.js',
+      './app/core/users/users.factory.js',
       './app/core/pelicula/pelicula.module.js',
-      './app/core/pelicula/pelicula.service.js',
+      './app/core/pelicula/pelicula.factory.js',
       './app/favoritas/favoritas.module.js',
       './app/favoritas/favoritas.component.js',
       './app/login/login.module.js',
@@ -45,7 +45,7 @@ const paths = {
       './app/peliculas/peliculas.module.js',
       './app/peliculas/peliculas.component.js',
       './app/header/header.module.js',
-      './app/header/header.component.js',
+      './app/header/header.directive.js',
       './app/app.js'
     ],
     estilos: ['./app/**/*.css', './app/**/*.scss'],
@@ -95,7 +95,11 @@ function startServer() {
     }));
 }
 
-
+//watch y reinicia automaticamente
+watch('./app/**/*.jade', series(html));
+watch('./app/**/*.scss', series(css));
+watch('./app/**/*.js', series(buildES2015));
+watch('./app/bower_componets/**', series(bowerComponents));
 
 exports.build = series(buildES2015,html,css,bowerComponents,startServer);
 exports.default = series(buildES2015,html,css,bowerComponents,startServer);
