@@ -1,5 +1,5 @@
 'use strict';
 
-angular.module('header', [
+angular.module('myApp.header', [
   'ngRoute'
 ])

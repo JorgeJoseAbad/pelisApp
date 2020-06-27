@@ -1,14 +1,14 @@
 header(my-header)
-div(class="container" ng-controller="PeliculaCtrl" ng-model="nombreView2")
+div(class="container" ng-controller="PeliculaCtrl as peli" ng-model="nombreView2")
   div(class="row")
     div(class="col-md-12")
-      h1 {{miPelicula.Title}}
+      h1 {{peli.miPelicula.Title}}
     div(class="row")
       div(class="col-md-4")
-        img(ng-src="{{miPelicula.Poster}}" alt="{{miPelicula.Title}}")
+        img(ng-src="{{peli.miPelicula.Poster}}" alt="{{peli.miPelicula.Title}}")
       div(class="col-md-4")
-        h2 Año: {{miPelicula.Year}}
-        h2 Typo: {{miPelicula.Type}}
+        h2 Año: {{peli.miPelicula.Year}}
+        h2 Typo: {{peli.miPelicula.Type}}
       div(class="col-md-4")
-        button(type="button" name="button" ng-click="ponerFavoritos()") Añadir a favoritas
+        button(type="button" name="button" ng-click="peli.ponerFavoritos()") Añadir a favoritas
       
