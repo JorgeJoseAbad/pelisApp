@@ -1,30 +1,28 @@
 header(my-header)
-div(class="container" ng-controller="PeliculasCtrl")
+div(class="container" ng-controller="PeliculasCtrl as vm")
   div(class="row")
     div(class="col-md-12")
       h1() Qué pelicula quieres ver??
       form(class="navbar-form navbar-left" novalidate)
         div(class="form-group")
           label(for="titulo") Titulo de la pelicula
-          input(ng-model="titulo" name="titulo" value="titulo" required)
+          input(ng-model="vm.titulo" name="titulo" value="vm.titulo" required)
         div(class="form-group")
           label(for="titulo") ¿De algun año determinado?
-          input(ng-model="year" name="year" value="year" required)
+          input(ng-model="vm.year" name="year" value="vm.year" required)
         div(class="form-group")
           label(for="buscar")
-          input(type="submit" name="buscar" ng-click="buscaPeliculas()" value="buscar")
+          input(type="submit" name="buscar" ng-click="vm.buscaPeliculas()" value="buscar")
       div()
-        p() Pelicula buscada: {{titulo}}
-        p() Del año: {{year}}
-      div(class="error" ng-if="error" ng-init="error = false")
+        p() Pelicula buscada: {{vm.titulo}}
+        p() Del año: {{vm.year}}
+      div(class="error" ng-if="vm.error")
         p() Se ha producido un error
-        p() {{resultadoError}}
-  
+        p() {{vm.resultadoError}}
   div(class="row")
     div(class="col-md-12")
       ol()
-        li(ng-if="!error" ng-repeat="pelicula in listaPeliculas")
+        li(ng-if="!vm.error" ng-repeat="pelicula in vm.listaPeliculas")
           p(class="pelicula-titulo") {{pelicula.Title}}.. pulsa para ver
-          a(href="/#/pelicula" ng-click="goToPelicula(pelicula)")
+          a(href="/#/pelicula" ng-click="vm.goToPelicula(pelicula)")
             img(class="thumbnail" ng-src="{{pelicula.Poster}}" alt="{{pelicula.Title}}" )
-      

@@ -11,48 +11,67 @@
       });
     }])
 
-    .controller('PeliculasCtrl', ['GestorPeliculas', '$scope', '$http', 'Buscador', (GestorPeliculas, $scope, $http, Buscador) => {
+    .controller('PeliculasCtrl', [
+      'GestorPeliculas',
+      '$scope',
+      '$http',
+      'Buscador',
+      peliculasCtrl
+    ])
 
-      $scope.titulo = "";
-      $scope.year = "";
-      $scope.listaPeliculas = [];
-      $scope.error = false;
-      $scope.resultadoError = "";
+  function peliculasCtrl(GestorPeliculas, $scope, $http, Buscador) {
 
-      $scope.goToPelicula = (pelicula) => {
-        console.log(pelicula);
-        GestorPeliculas.pelicula = pelicula;
-      };
+    var vm = this;
 
-      $scope.buscaPeliculas = () => {
+    console.log("Que es vm?: ", vm);
+    vm.titulo = "";
+    vm.year = "";
+    vm.listaPeliculas = [];
+    vm.error;
+    vm.resultadoError = "";
 
-        console.log("estamos en busca pelicula", $scope.titulo, $scope.year);
+    vm.goToPelicula = (pelicula) => {
+      console.log(pelicula);
+      GestorPeliculas.pelicula = pelicula;
+    };
 
-        Buscador($scope.titulo, $scope.year)
-          .then((response) => {
-            console.log(response.data.Search);
-            if (response.data.Search != undefined) {
-              console.log("no es undefined: " + response.data.Search);
-              $scope.error = false;
-              $scope.listaPeliculas = response.data.Search;
-            } else {
-              console.log("es undefined: " + response.data.Search)
-              $scope.error = true;
-              $scope.resultadoError = "Error!!, No hay datos coincidentes con los criterios de búsqueda";
-            }
-          }, (response) => {
-            console.log(response);
-            $scope.error = true;
-            $scope.resultadoError = `$Error!!, status:  ${response.status}`;
+    vm.buscaPeliculas = () => {
+      console.log("estamos en busca pelicula", vm.titulo, vm.year);
 
-          })
-          .catch((response) => {
-            console.log(response);
-            $scope.error = true;
-            $scope.resultadoError = `Fallo promesa:  ${response}`;
-          });
+      var dato = {
+        titulo: vm.titulo,
+        year: vm.year
       }
+      console.log(dato);
+      Buscador(dato)
+        .then((response) => {
+          console.log(response);
+          console.log(response.data.Search);
+          if (response.data.Search != undefined) {
+            console.log("no es undefined: " + response.data.Search);
+            vm.error = false;
+            vm.listaPeliculas = response.data.Search;
 
-    }]);
+          } else {
+            debugger;
+            console.log("es undefined: " + response.data.Search)
+            vm.error = true;
+            vm.resultadoError = "Error!!, No hay datos coincidentes con los criterios de búsqueda";
 
+          }
+        }, (response) => {
+          console.log(response);
+          vm.error = true;
+          vm.resultadoError = `$Error!!, status:  ${response.status}`;
+
+
+        })
+        .catch((response) => {
+          console.log(response);
+          vm.error = true;
+          vm.resultadoError = `Fallo promesa:  ${response}`;
+
+        });
+    }
+  }
 })();
