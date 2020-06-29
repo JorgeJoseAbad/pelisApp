@@ -4,10 +4,14 @@
   angular.module('myApp.favoritas')
 
     .config(['$routeProvider', function($routeProvider) {
-      $routeProvider.when('/favoritas', {
+      $routeProvider
+      .when('/favoritas', {
         templateUrl: 'favoritas/favoritas.html',
         controller: 'FavoritasCtrl'
-      });
+      })
+      .when('/pelicula', {
+        templateUrl: 'pelicula/pelicula.html',
+      })
     }])
 
     .controller('FavoritasCtrl',
@@ -16,28 +20,45 @@
         '$scope',
         '$localStorage',
         '$sessionStorage',
+        '$location',
         favoritasCtrl
       ])
 
-  function favoritasCtrl(GestorPeliculas, $routeParams, $scope, $localStorage, $sessionStorage) {
+  function favoritasCtrl(
+    GestorPeliculas,
+    $routeParams,
+    $scope,
+    $localStorage,
+    $sessionStorage,
+    $location,
+  ) {
     console.log("Controlador activo de favoritas");
 
-    $scope.favoritas = []; //tomo el dato de factory MyService
+    let vm = this;
 
-    $scope.error = false;
-    $scope.$storage = $localStorage;
+    vm.favoritas = []; //tomo el dato de factory MyService
 
-    console.log($scope.$storage);
-    console.log($scope.$storage.project);
+    vm.error = false;
+    vm.$storage = $localStorage;
 
-    $scope.favoritas = $scope.$storage.project;
+    console.log(vm.$storage);
+    console.log(vm.$storage.project);
+
+    vm.favoritas = vm.$storage.project;
 
     //$scope.$storage.project.push($scope.miPelicula);
 
-    $scope.goToPelicula = (pelicula) => {
+    vm.goToPelicula = (pelicula) => {
       console.log(pelicula);
       GestorPeliculas.pelicula = pelicula;
+
     };
+
+    vm.goPeliculaButton = (pelicula) => {
+      console.log("pelicula", pelicula);
+      GestorPeliculas.pelicula = pelicula;
+      $location.url('/pelicula');
+    }
 
   }
 

@@ -1,10 +1,11 @@
 header(my-header)
-h1()
-  div() Estas son mis peliculas favoritas
-ol()
-  li(ng-if="!error" ng-repeat="favorita in favoritas")
-    div(class="pelicula-titulo") {{favorita.Title}}  .. pulsa para ver
-    a(href="/#/pelicula" ng-click="goToPelicula(favorita)")
-      img(class="thumbnail" ng-src="{{favorita.Poster}}" alt="{{favorita.Title}}" )
-  
+div(ng-controller="FavoritasCtrl as vm")
+  h1()
+    div() Estas son mis peliculas favoritas
+  ol()
+    li(ng-if="!vm.error" ng-repeat="favorita in vm.favoritas")
+      div(class="pelicula-titulo") {{favorita.Title}}
+      a(href="/#/pelicula" ng-click="vm.goToPelicula(favorita)")
+        img(class="thumbnail" ng-src="{{favorita.Poster}}" alt="{{favorita.Title}}" )
+      button(type="button" name="button" ng-click="vm.goPeliculaButton(favorita)") ver detalles
   
