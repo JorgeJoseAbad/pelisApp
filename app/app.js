@@ -13,7 +13,8 @@ angular.module('myApp', [
 ]).
 factory("GestorPeliculas", function() {
   return {
-    pelicula: "prueba test"
+    pelicula: "prueba test",
+    coleccionable : true,
   };
 }).
 config(['$routeProvider', function($routeProvider) {

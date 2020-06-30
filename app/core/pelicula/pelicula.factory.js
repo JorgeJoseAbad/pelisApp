@@ -3,9 +3,9 @@
 
   angular.
   module('core.pelicula').
-  factory('Buscador', ['$http', buscador]);
+  factory('Buscador', ['$http', Buscador]);
 
-  function buscador($http) {
+  function Buscador($http) {
     return function(dato) {
       var listaPeliculas = [];
       console.log("en factory Buscador dato es", dato.titulo, dato.year);

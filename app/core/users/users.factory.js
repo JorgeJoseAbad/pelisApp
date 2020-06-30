@@ -2,10 +2,10 @@
   'use strict';
 
   angular.module('core.users')
-    .factory('UsersService', usersService)
+    .factory('UsersService', UsersService)
 
-  function usersService() {
-    var usersService = {};
+  function UsersService() {
+    let usersService = {};
 
     usersService.get = () => {
       let usuariosAutorizados = [{

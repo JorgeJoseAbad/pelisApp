@@ -9,6 +9,6 @@ div(class="container" ng-controller="PeliculaCtrl as peli" ng-model="nombreView2
       div(class="col-md-4")
         h2 Año: {{peli.miPelicula.Year}}
         h2 Typo: {{peli.miPelicula.Type}}
-      div(class="col-md-4")
+      div(class="col-md-4" ng-if="peli.coleccionable")
         button(type="button" name="button" ng-click="peli.ponerFavoritos()") Añadir a favoritas
       

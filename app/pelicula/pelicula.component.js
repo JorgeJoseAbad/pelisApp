@@ -15,14 +15,15 @@
       '$routeParams',
       '$scope',
       '$localStorage',
-      peliculaCtrl
+      PeliculaCtrl
     ]);
 
-  function peliculaCtrl(GestorPeliculas, $routeParams, $scope, $localStorage) {
+  function PeliculaCtrl(GestorPeliculas, $routeParams, $scope, $localStorage) {
 
-    var vm = this; //vm stands for view model
+    let vm = this; //vm stands for view model
     vm.nombreView2 = "Jose Andres"
     vm.miPelicula = GestorPeliculas.pelicula; //tomo el dato de factory MyService
+    vm.coleccionable = GestorPeliculas.coleccionable;
 
     vm.ponerFavoritos = () => {
       $scope.$storage = $localStorage;

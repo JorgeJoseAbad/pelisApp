@@ -16,12 +16,12 @@
       '$scope',
       '$http',
       'Buscador',
-      peliculasCtrl
+      PeliculasCtrl
     ])
 
-  function peliculasCtrl(GestorPeliculas, $scope, $http, Buscador) {
+  function PeliculasCtrl(GestorPeliculas, $scope, $http, Buscador) {
 
-    var vm = this;
+    let vm = this;
 
     console.log("Que es vm?: ", vm);
     vm.titulo = "";
@@ -33,12 +33,13 @@
     vm.goToPelicula = (pelicula) => {
       console.log(pelicula);
       GestorPeliculas.pelicula = pelicula;
+      GestorPeliculas.coleccionable = true;
     };
 
     vm.buscaPeliculas = () => {
       console.log("estamos en busca pelicula", vm.titulo, vm.year);
 
-      var dato = {
+      let dato = {
         titulo: vm.titulo,
         year: vm.year
       }

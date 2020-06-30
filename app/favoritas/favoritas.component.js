@@ -21,10 +21,10 @@
         '$localStorage',
         '$sessionStorage',
         '$location',
-        favoritasCtrl
+        FavoritasCtrl
       ])
 
-  function favoritasCtrl(
+  function FavoritasCtrl(
     GestorPeliculas,
     $routeParams,
     $scope,
@@ -51,12 +51,14 @@
     vm.goToPelicula = (pelicula) => {
       console.log(pelicula);
       GestorPeliculas.pelicula = pelicula;
+      GestorPeliculas.coleccionable = false;
 
     };
 
     vm.goPeliculaButton = (pelicula) => {
       console.log("pelicula", pelicula);
       GestorPeliculas.pelicula = pelicula;
+      GestorPeliculas.coleccionable = false;
       $location.url('/pelicula');
     }
 
