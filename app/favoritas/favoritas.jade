@@ -7,5 +7,6 @@ div(ng-controller="FavoritasCtrl as vm")
       div(class="pelicula-titulo") {{favorita.Title}}
       a(href="/#/pelicula" ng-click="vm.goToPelicula(favorita)")
         img(class="thumbnail" ng-src="{{favorita.Poster}}" alt="{{favorita.Title}}" )
-      button(type="button" name="button" ng-click="vm.goPeliculaButton(favorita)") ver detalles
+      button(type="button" name="ver" ng-click="vm.goPeliculaButton(favorita)") ver detalles
+      button(type="button" name="eliminar" ng-click="vm.eliminar(favorita)") Eliminar
   

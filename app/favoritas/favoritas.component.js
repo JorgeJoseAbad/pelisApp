@@ -60,6 +60,16 @@
       $location.url('/pelicula');
     }
 
+    vm.eliminar = (pelicula) => {
+      console.log("Voy a eliminar: ---> ", pelicula)
+      vm.$storage.project.forEach((item, i) => {
+         console.log(item);
+         if (item==pelicula) vm.$storage.project.splice(i,1);
+      });
+
+
+    }
+
   }
 
 })();
